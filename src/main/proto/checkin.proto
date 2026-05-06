@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package checkin;
+
+option java_package = "com.nomba.dsaapp.grpc";
+option java_outer_classname = "CheckInProto";
+option java_multiple_files = true;
+
+service CheckInService {
+  rpc CheckIn (CheckInRequest) returns (CheckInResponse);
+}
+
+message CheckInRequest {
+  string bearer_token = 1;
+  int64 timestamp = 2;
+  int64 latitude = 3;
+  int64 longitude = 4;
+}
+
+message CheckInResponse {
+  string session_id = 1;
+}

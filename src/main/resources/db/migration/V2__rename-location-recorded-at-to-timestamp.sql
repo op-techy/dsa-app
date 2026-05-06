@@ -1,0 +1,1 @@
+ALTER TABLE location_data RENAME COLUMN recorded_at TO timestamp;
